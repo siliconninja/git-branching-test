@@ -29,6 +29,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 ````
 
 https://stackoverflow.com/questions/11091969/conflict-content-merge-conflict-in
+
 Resolve a conflict by editing the file to **manually merge the parts of the file that git had trouble merging**. This may mean **discarding either your changes or someone else's or doing a mix of the two**. **You will also need to delete the <<<<<<<, =======, and >>>>>>> in the file.**
 
 Just like SVN
@@ -101,13 +102,17 @@ $ --> git branch
 Step 1: From your project repository, **bring in the changes** and test.
 
 git fetch origin
+
 git checkout -b add-new-feature origin/add-new-feature
+
 **git merge master** (gets the new changes)
 
 Step 2: Merge the changes and update on GitHub.
 
 git checkout master
+
 git merge --no-ff add-new-feature
+
 git push origin master
 
 Now I can do a simple `git checkout master` and `git merge --no-ff add-new-feature` (to keep commit messages, https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/)
